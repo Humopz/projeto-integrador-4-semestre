@@ -186,8 +186,7 @@ body {
     height: auto;
   }
 
-  .cta-content,
-  .cta-image {
+  .cta-content {
     flex: 1;
     width: 100%;
   }
@@ -206,6 +205,9 @@ body {
     text-align: center;
     padding: 20px;
     font-size: 18px;
+  }
+  .cta-image {
+    display: none;
   }
 }
 
@@ -230,5 +232,8 @@ body {
   .btn-secondary {
     padding: 18px;
     font-size: 16px;
+  }
+  .cta-image {
+    display: none;
   }
 }

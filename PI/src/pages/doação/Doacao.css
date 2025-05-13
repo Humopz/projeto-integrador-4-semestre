@@ -4,8 +4,9 @@ form {
     padding: 30px;
     background-color: #f9f9f9;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: 'Arial', sans-serif;
+    font-family: 'JetBrains Mono', monospace;
+  font-style: normal;
+    padding-top: 10rem;
   }
   
   h2, h3 {
