@@ -5,22 +5,36 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  position: relative;
-  z-index: 10;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;        /* 🔄 alterado */
+  top: 0;                 /* ⬆️ fixa no topo */
+  left: 0;
+  z-index: 10;            /* 🔝 garante que fique acima da imagem */
   background: transparent;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 
 .logo img {
   height: 80px;
-  margin-left: 100px;
   transform: rotate(10deg);
 }
 
+/* Oculta o menu por padrão em mobile */
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 12;
+}
+
+/* Estilos dos links */
 .nav {
   display: flex;
-  gap: 0px;
-  
+  gap: 0;
 }
 
 .nav a {
@@ -29,29 +43,51 @@
   transition: opacity 0.3s;
   margin-right: 130px;
   font-family: 'JetBrains Mono', monospace;
-  
-  
 }
 
-/* Estilo para páginas escuras */
+/* Temas claro/escuro */
 .header.dark .nav a {
   color: white;
-  
 }
 
-/* Estilo para páginas claras */
 .header.light .nav a {
   color: #333;
 }
 
-.l-fundo {
-  position: absolute;
-  width: 130px;
-  height: 130px;
-  left: 38px;
-  top: 133.88px;
-  background: #E84C3D;
-  border-radius: 40px;
-  transform: rotate(45deg);
-  z-index: 11;
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+    margin-right: 20px;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: white;
+    display: none;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .header.dark .nav {
+    background-color: #000;
+  }
+
+  .nav a {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    margin-right: 0;
+  }
+
+  .menu-toggle:checked ~ .menu-icon + .nav {
+    display: flex;
+  }
+
+  .logo img {
+    margin-left: 0;
+  }
 }

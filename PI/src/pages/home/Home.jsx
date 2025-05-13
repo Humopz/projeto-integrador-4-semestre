@@ -1,28 +1,22 @@
 import React from 'react';
-import Header from '../../components/header/Header';
-import './Home.css';
-import Footer from '../../components/footer/Footer';
 import { Link } from 'react-router-dom';
+import Header from '../../components/header/Header';
+import Footer from '../../components/footer/Footer';
+import './Home.css';
 
-export const Home = () => {
+const Home = () => {
   return (
     <>
-      {/* Cabeçalho da página */}
-      <Header />
       
-      {/* Seção principal da home */}
-      <div className="home-page">
-        
-        {/* Imagem de fundo */}
-        <div className="home-imagem">
-          {/* O caminho da imagem é gerenciado no CSS */}
-        </div>
-
-        {/* Conteúdo principal da home */}
-        <div className="home-conteudo">
-          <h1 className="home-titulo">Bem-vindo</h1>
-
-          <div className="Home-descrição">
+    <Header />
+      <main className="home">
+      
+        {/* Seção Hero */}
+        <section className="hero">
+          
+          <div className="hero-image" />
+          <div className="hero-content">
+            <h1>Bem-vindo</h1>
             <p>
               Chega de desperdiçar,<br />
               aqui você encontrará uma <br />
@@ -31,51 +25,32 @@ export const Home = () => {
               através das sobras<br />
               das que você já utilizou.
             </p>
+            <Link to="/Receitas" className="btn-primary">Veja nossas receitas</Link>
           </div>
+        </section>
 
-        </div>
-
-        {/* Botão para acessar as receitas */}
-        <div className="home-botao-container">
-          <Link to="/Receitas" className="home-botao">
-            <h4>Veja nossas receitas</h4>
-          </Link>
-        </div>
-
-      </div>
-
-      {/* Seção de filtro com imagem lateral */}
-      <div className="home-filtro-container">
-        <div className="home-filtro-wrapper">
-          
-          {/* Seção de conteúdo à direita */}
-          <div className="home-conteudo-filtro">
-            <h1 className='htitulo2'>Transforme o mundo com cada garfada!</h1>
-            <h4 className='htexto2'>
+        {/* Seção Filtro / Chamada para ação */}
+        <section className="cta">
+          <div className="cta-content">
+            <h2>Transforme o mundo com cada garfada!</h2>
+            <p>
               Descubra o poder da comida sustentável <br />
               e divirta-se aprendendo a reaproveitar<br />
               alimentos de forma criativa e saborosa!<br />
               Aqui, você encontra receitas incríveis,<br />
               desafios interativos e dicas para <br />
               reduzir o desperdício.
-            </h4>
-
-            {/* Botão de cadastro */}
-            <div className="home-botao2-container">
-              <Link to="/Cadastro" className="home-botao2"><h4>Cadastre-se</h4></Link>
-            </div>
+            </p>
+            <Link to="/Cadastro" className="btn-secondary">Cadastre-se</Link>
           </div>
+          <div className="cta-image" />
+        </section>
 
-          {/* Imagem lateral */}
-          <div className="home-imagem-lateral"></div>
-        </div>
-      </div>
+      </main>
 
-      {/* Rodapé da página */}
       <Footer />
     </>
   );
-}
+};
 
 export default Home;
-

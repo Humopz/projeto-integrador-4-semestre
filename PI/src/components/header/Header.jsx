@@ -10,21 +10,24 @@ const Header = () => {
 
   return (
     <header className={`header ${isHome ? 'dark' : 'light'}`}>
-      <div className="logo">
-        <Link to="/">
-          <img src={isHome ? logoBranca : logoPreta} alt="Logo" />
-        </Link>
-      </div>
+  <div className="logo">
+    <Link to="/">
+      <img src={isHome ? logoBranca : logoPreta} alt="Logo" />
+    </Link>
+  </div>
 
-      <nav className="nav">
-        <Link to="/sobre">Sobre Nós</Link>
-        <Link to="/receitas">Receitas</Link>
-        <Link to="/Doacao">Doe</Link>
-        <Link to="/cadastro">Cadastrar</Link>
-        <Link to="/login">Entrar</Link>
-        
-      </nav>
-    </header>
+  <input type="checkbox" id="menu-toggle" className="menu-toggle" />
+  <label htmlFor="menu-toggle" className="menu-icon">&#9776;</label>
+
+  <nav className="nav">
+    <Link to="/sobre">Sobre Nós</Link>
+    <Link to="/receitas">Receitas</Link>
+    <Link to="/Doacao">Doe</Link>
+    <Link to="/cadastro">Cadastrar</Link>
+    <Link to="/login">Entrar</Link>
+  </nav>
+</header>
+
   );
 };
 
